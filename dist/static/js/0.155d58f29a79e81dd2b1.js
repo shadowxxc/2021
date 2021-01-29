@@ -1,2 +1,0 @@
-webpackJsonp([0],{"8AWn":function(a,n){},R5iM:function(a,n,e){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var t={render:function(){var a=this.$createElement;return(this._self._c||a)("div",[this._v("\n  aaaaaaaaaaaaaaaaa\n")])},staticRenderFns:[]};var r=e("C7Lr")({name:"insert",data:function(){return{list:[],current:{}}}},t,!1,function(a){e("8AWn")},null,null);n.default=r.exports}});
-//# sourceMappingURL=0.155d58f29a79e81dd2b1.js.map

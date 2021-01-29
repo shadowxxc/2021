@@ -1,7 +1,10 @@
 <template>
   <div >
+      <button @click="cihui">词--</button>
       <button @click="showTiaojian">筛选</button>
+      <button @click="guolv">过滤</button>
       <button @click="allUid">统计uid</button>
+      <button @click="clear">清空缓存</button>
 
       <div class="tiaojian" v-show="tiaojian">
         最小值：<input type="number" v-model="min"/>
@@ -20,8 +23,17 @@
       
       <div class="tiaojian" v-show="alluid">
         <div v-for="(item, index) in userList" :key="index+'-'+item.earnid"  class="li">
-          {{item}}{{index}}
+          {{index}}
         </div>
+        <div v-for="(item, index) in userList" :key="index+'-'+item.earnid"  class="li">
+          {{index}}：次数{{item.times}},￥{{item.price}}
+        </div>
+      </div>
+
+      <div class="tiaojian" v-show="cibox">
+        <button @click="reci(item)" v-for="(item, index) in ciList" :key="index">
+          {{item}}
+        </button>
       </div>
 
       <div class="list">
@@ -47,13 +59,15 @@ export default {
   data () {
     return {
       list: res,
+      ciList: word,
       current:{},
       tiaojian: false,
+      cibox: false,
       alluid: false,
       min: null,
       max: null,
       search: '',
-      userList:{}
+      userList:{},
     }
   },
    methods: {
@@ -105,6 +119,21 @@ export default {
       let user = localStorage.getItem('finish_uid'); 
       user = JSON.parse(user)
       this.userList = user
+    },
+    guolv(){
+      this.list = filter(this.list)
+    },
+    clear(){
+       localStorage.removeItem('del')
+       localStorage.removeItem('finish')
+       localStorage.removeItem('finish_uid')
+    },
+    cihui(){
+      this.cibox = !this.cibox
+      // this.list = searchAllWord(this.list)
+    },
+    reci(data){
+      this.list = search(this.list, data)
     }
   }
 
