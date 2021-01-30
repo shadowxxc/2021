@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>user</title>
+    <script src="./my.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        let r= ''
+        for (let index = 0; index < my_groupid.length; index++) {
+            const el = my_groupid[index];
+            r += '<div style="background: lightBlue"><a target="_blank" href="http://m.zrb.net/home/ciruser?type=0&zrbsign=0&zrbId='+el+'&pinglunType=1#index_section">'+el+'</a></div><br/>'
+        }
+        document.getElementById('app').innerHTML = r;
+        console.log(JSON.stringify(r))
+
+    </script>
+</body>
+</html>
