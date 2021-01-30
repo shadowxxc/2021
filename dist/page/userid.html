@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../static/json/data.js"></script>
+    <script src="../static/json/my.js"></script>
+    <!-- <script src="./res3.js"></script>
+    <script src="./my.js"></script> -->
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        let r= ''
+        for (let index = 0; index < res.length; index++) {
+            const el = res[index];
+            // let obj = {
+            //     id: '['+el.title+'](http://m.zrb.net/next/task_detail?earnid='+el.earnid+'&iswww=1#index_section)',
+            //     title: el.title,
+            //     uid: el.uid,
+            //     grouplink: '['+el.uid+'](http://m.zrb.net/home/ciruser?type=0&zrbsign=0&zrbId='+el.uid+'&pinglunType=1#index_section)',
+            //     money: el.money,
+            //     groupname: el.groupname
+            // }
+            // res.push(obj)
+
+            console.log(el.uid)
+
+            if(my_groupid.indexOf(el.uid)>-1){
+                // res.push(el)
+                r += '<div style="background: lightBlue"><a target="_blank" href="http://m.zrb.net/next/task_detail?earnid='+el.earnid+'&iswww=1#index_section">'+el.title+'</a></div><br/>'
+                
+            }
+            
+        }
+        document.getElementById('app').innerHTML = r;
+        console.log(JSON.stringify(r))
+
+    </script>
+</body>
+</html>
