@@ -18,6 +18,7 @@
         <button @click="bySearch">搜索</button>
         <br/>
         <button @click="reset">还原</button>
+        <button @click="byUser1">用户</button>
         <br/>
       </div>
       
@@ -134,6 +135,9 @@ export default {
     },
     reci(data){
       this.list = search(this.list, data)
+    },
+    byUser1(){
+      this.list = byUser(this.list)
     }
   }
 

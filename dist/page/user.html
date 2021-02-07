@@ -10,12 +10,15 @@
     <div id="app"></div>
     <script>
         let r= ''
+        let res = []
         for (let index = 0; index < my_groupid.length; index++) {
             const el = my_groupid[index];
             r += '<div style="background: lightBlue"><a target="_blank" href="http://m.zrb.net/home/ciruser?type=0&zrbsign=0&zrbId='+el+'&pinglunType=1#index_section">'+el+'</a></div><br/>'
+            res.push(el)
         }
         document.getElementById('app').innerHTML = r;
         console.log(JSON.stringify(r))
+        console.log(JSON.stringify(Array.from(new Set(res))))
 
     </script>
 </body>

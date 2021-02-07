@@ -96,3 +96,18 @@ function filter(data) {
 
   return data
 }
+
+function byUser(data) {
+  let end = []
+  for (let i = 0; i < data.length; i++) {
+    let uid = data[i].uid
+    if (useridAll.indexOf(uid) > -1) {
+      end.push(data[i])
+    }
+  }
+
+  return end
+}
+
+
+
