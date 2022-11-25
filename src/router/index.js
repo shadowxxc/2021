@@ -9,6 +9,11 @@ export default new Router({
       path: '/zrb',
       name: 'zrb',
       component: () => import('@/views/zrb/index.vue')
+    },
+    {
+      path: '/updating',
+      name:'updating',
+      component: () => import('@/views/updating/index.vue')
     }
   ]
 })
